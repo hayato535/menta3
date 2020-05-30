@@ -9,17 +9,18 @@ function todosPush(){
     work:'作業中'
   }
   todos.push(todo);
-  return;
 }
-function createWorkButton(workButton){
+function createWorkButton(){
+  const workButton = document.createElement('input');
   workButton.type = 'button';
   workButton.value = '作業中'
-  return;
+  return workButton;
 }
-function createDeleteButton(deleteButton){
+function createDeleteButton(){
+  const deleteButton = document.createElement('input');
   deleteButton.type = 'button';
   deleteButton.value = '削除'
-  return;
+  return deleteButton;
 }
 function tbodyAddTodo(workButton,deleteButton){
   //パーツを作り変数化する
@@ -38,16 +39,12 @@ function tbodyAddTodo(workButton,deleteButton){
   tr.appendChild(workingTd);
   tr.appendChild(deleteTd);
   tbody.appendChild(tr);
-
-  return;
 }
 
 
 document.getElementById('add-button').addEventListener('click', () =>{
-  const workButton = document.createElement('input');
-  createWorkButton(workButton);
-  const deleteButton = document.createElement('input');
-  createDeleteButton(deleteButton);
+  createWorkButton();
+  createDeleteButton();
   todosPush();
-  tbodyAddTodo(workButton,deleteButton);
+  tbodyAddTodo(createWorkButton(),createDeleteButton());
 })
