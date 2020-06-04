@@ -43,8 +43,8 @@ function tbodyAddTodo(workButton,deleteButton){
 
 
 document.getElementById('add-button').addEventListener('click', () =>{
-  const createWB = createWorkButton();
-  const createDB = createDeleteButton();
+  const workButton = createWorkButton();
+  const deleteButton = createDeleteButton();
   todosPush();
-  tbodyAddTodo(createWB,createDB);
+  tbodyAddTodo(workButton,deleteButton);
 })
